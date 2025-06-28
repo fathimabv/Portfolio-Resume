@@ -10,32 +10,49 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary: #2D6F7D;
+      --accent: #9C5A6C;
+      --background: #F6F5F2;
+      --text: #000000;
+      --white: #ffffff;
+    }
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: #fbe7f0;
-      color: #333;
+      background-color: var(--background);
+      color: var(--text);
+      transition: background 0.4s, color 0.4s;
+    }
+
+    body.dark-mode {
+      --primary: #1b2e35;
+      --accent: #d98da1;
+      --background: #1c1c1c;
+      --text: #ffffff;
     }
 
     .navbar {
-      background-color: #781c42;
+      background-color: var(--primary);
       padding: 25px 30px;
       min-height: 90px;
     }
 
     .navbar-brand {
-      color: white !important;
+      color: var(--white) !important;
       font-weight: 600;
       font-size: 24px;
       font-family: 'Playfair Display', serif;
     }
 
     .nav-link {
-      color: white !important;
+      color: var(--white) !important;
       font-weight: 500;
       margin: 0 15px;
       font-size: 17px;
       border-radius: 6px;
+      transition: background 0.3s ease;
     }
 
     .nav-link:hover {
@@ -51,22 +68,23 @@
 
     .section-title {
       font-size: 32px;
-      color: #5e1131;
+      color: var(--primary);
       font-family: 'Playfair Display', serif;
       margin-bottom: 40px;
     }
 
-    .contact-card {
-      background: #fff;
+    .contact-card, .contact-form {
+      background: var(--white);
       border-radius: 12px;
       padding: 40px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      margin-bottom: 40px;
       transition: transform 0.4s ease, background-color 0.4s ease;
     }
 
     .contact-card:hover {
       transform: scale(1.03);
-      background-color: #fff6fa;
+      background-color: #fdfbfa;
     }
 
     .contact-card p {
@@ -76,32 +94,77 @@
 
     .contact-card a {
       text-decoration: none;
-      color: #781c42;
+      color: var(--accent);
     }
 
     .contact-card a:hover {
       text-decoration: underline;
-      color: #b56b9e;
+      color: var(--primary);
     }
 
     .social-icons a {
       font-size: 24px;
       margin: 10px 15px;
-      color: #781c42;
+      color: var(--accent);
       transition: color 0.3s ease, transform 0.3s ease;
     }
 
     .social-icons a:hover {
-      color: #b56b9e;
+      color: var(--primary);
       transform: scale(1.2);
     }
 
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .contact-form button {
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .contact-form button:hover {
+      background-color: var(--primary);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+      border-radius: 12px;
+    }
+
     footer {
-      background-color: #781c42;
+      background-color: var(--primary);
       color: white;
       text-align: center;
       padding: 20px 10px;
       font-size: 16px;
+    }
+
+    .dark-toggle {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      z-index: 1000;
     }
 
     @media (max-width: 576px) {
@@ -112,13 +175,16 @@
         font-size: 15px;
         margin: 5px 10px;
       }
-      .contact-card {
+      .contact-card, .contact-form {
         padding: 30px 20px;
       }
     }
   </style>
 </head>
 <body>
+
+<!-- Dark Mode Toggle -->
+<button class="dark-toggle" onclick="toggleDarkMode()">🌓 Mode</button>
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
@@ -138,9 +204,10 @@
   </div>
 </nav>
 
-<!-- Contact Section -->
+<!-- Contact Info -->
 <div class="container">
   <h2 class="section-title" data-aos="fade-up">Contact Me</h2>
+  
   <div class="contact-card" data-aos="zoom-in">
     <p><strong>📍 Location:</strong> Chennai - 73</p>
     <p><strong>📧 Email:</strong> <a href="mailto:r.a.k.fathimabeevi@gmail.com">r.a.k.fathimabeevi@gmail.com</a></p>
@@ -148,16 +215,35 @@
     <p><strong>🌐 Netlify Projects:</strong> <a href="https://app.netlify.com/teams/fathimabv/projects" target="_blank">View Projects</a></p>
 
     <div class="social-icons mt-4">
-      <a href="https://github.com/fathimabv" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/fathima-beevi-78b699371" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="https://app.netlify.com/teams/fathimabv/projects" target="_blank" title="Netlify"><i class="fas fa-globe"></i></a>
+      <a href="https://github.com/fathimabv" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/fathima-beevi-78b699371" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://app.netlify.com/teams/fathimabv/projects" target="_blank"><i class="fas fa-globe"></i></a>
     </div>
+  </div>
+
+  <!-- Contact Form -->
+  <div class="contact-form" data-aos="fade-up">
+    <h4 class="mb-4">Send a Message</h4>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <!-- Map -->
+  <div class="map-container mb-5" data-aos="fade-up">
+    <h5 class="mb-3">Find Me Here</h5>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62208.563856313215!2d80.1890031!3d13.0480439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5261643edc7f23%3A0x40d2fafe65a54761!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1710000000000"
+      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 </div>
 
 <!-- Footer -->
 <footer>
-  &copy; 2025 Fathima Beevi &nbsp;|&nbsp; Portfolio Contact Page &nbsp;|&nbsp; Built with 🤍 and Code
+  &copy; 2025 Fathima Beevi &nbsp;|&nbsp; Contact Page &nbsp;|&nbsp; Built with 🤍 and Code
 </footer>
 
 <!-- Scripts -->
@@ -165,6 +251,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
   AOS.init({ duration: 1000, once: true });
+
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+  }
 </script>
 
 </body>

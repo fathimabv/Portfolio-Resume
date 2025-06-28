@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fathima Beevi | Projects</title>
   <link rel="icon" href="./imgfoto.jpg">
+
   <!-- Bootstrap & AOS CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
@@ -16,13 +17,12 @@
     body {
       margin: 0;
       font-family: "Poppins", sans-serif;
-      background-color: #fbe7f0;
-      color: #333;
+      background-color: #F6F5F2;
+      color: #000;
     }
 
-    /* Navbar */
     .navbar {
-      background-color: #781c42;
+      background-color: #2D6F7D;
       padding: 25px 30px;
       min-height: 90px;
     }
@@ -40,14 +40,12 @@
       margin: 0 15px;
       font-size: 17px;
       border-radius: 6px;
-      transition: background 0.3s ease;
     }
 
     .nav-link:hover {
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.2);
     }
 
-    /* Container */
     .container {
       max-width: 1100px;
       margin: auto;
@@ -56,47 +54,53 @@
 
     .section-title {
       font-size: 32px;
-      color: #5e1131;
+      color: #2D6F7D;
       font-family: "Playfair Display", serif;
       text-align: center;
       margin-bottom: 40px;
     }
 
-    /* Project Cards */
     .project-card {
       background: #fff;
       border-radius: 12px;
       padding: 25px;
       box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
       margin-bottom: 30px;
-      transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.3s ease;
-      border: 1px solid #eee;
-      transform: scale(1);
+      transition: transform 0.35s ease-in-out, box-shadow 0.35s ease-in-out;
+      border-left: 6px solid #9C5A6C;
+      will-change: transform;
     }
 
     .project-card:hover {
       transform: scale(1.05);
-      box-shadow: 0 12px 30px rgba(120, 28, 66, 0.25);
-      border-color: #df6099;
-      background-color: #fff6fa;
+      box-shadow: 0 18px 40px rgba(45, 111, 125, 0.25);
+      z-index: 2;
+      cursor: pointer;
     }
 
     .project-card h5 {
-      color: #912f56;
-      margin-bottom: 10px;
-      transition: color 0.3s ease;
-    }
-
-    .project-card h5:hover {
-      color: #781c42;
-    }
-
-    .project-card p {
+      color: #2D6F7D;
+      font-weight: 600;
       margin-bottom: 8px;
     }
 
+    .project-card small {
+      color: #9C5A6C;
+    }
+
+    .project-card p {
+      margin: 10px 0;
+      line-height: 1.6;
+    }
+
+    .skills {
+      font-style: italic;
+      font-size: 15px;
+      color: #555;
+    }
+
     .btn-link {
-      background-color: #781c42;
+      background-color: #2D6F7D;
       color: white;
       padding: 8px 16px;
       border-radius: 5px;
@@ -108,12 +112,12 @@
     }
 
     .btn-link:hover {
-      background-color: #b56b9e;
-      box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+      background-color: #9C5A6C;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
     }
 
     footer {
-      background-color: #781c42;
+      background-color: #2D6F7D;
       color: white;
       text-align: center;
       padding: 20px;
@@ -133,7 +137,7 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
-          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
@@ -143,60 +147,70 @@
 
   <!-- Projects Section -->
   <div class="container">
-    <h2 class="section-title" data-aos="fade-up">My Projects</h2>
+    <h2 class="section-title" data-aos="fade-up">Project Highlights</h2>
 
+    <!-- Project Cards -->
     <div class="project-card" data-aos="fade-up">
-      <h5>Music Recommendation System using Spotify & Python</h5>
-      <p>Built with Spotify API, Pandas & Scikit-learn to recommend songs based on user preferences.</p>
-    </div>
-
-    <div class="project-card" data-aos="fade-up">
-      <h5>Mini Projects using IoT Devices</h5>
-      <p>Created real-time data monitoring & automation apps using sensors and microcontrollers.</p>
-    </div>
-
-    <div class="project-card" data-aos="fade-up">
-      <h5>Indian Sign Language Recognition (Deep Learning)</h5>
-      <p>Real-time sign detection using LSTM for gesture sequence prediction.</p>
-    </div>
-
-    <div class="project-card" data-aos="fade-up">
-      <h5>Job Salary Prediction with NLP</h5>
-      <p>Used ML & Natural Language Processing to estimate salaries from job descriptions.</p>
-    </div>
-
-    <div class="project-card" data-aos="fade-up">
-      <h5>Cafe World Website</h5>
-      <p>Modern static website for cafes built with HTML5 & CSS3 – fully responsive UI.</p>
+      <h5>Cafe World – Modern Cafe Website</h5>
+      <small>Jun 2025 · FITA Academy</small>
+      <p>Cafe World is a fully responsive and visually appealing static website designed for a modern café or coffee shop. Built using HTML and CSS, it promotes café services, menus, and enhances digital presence.</p>
+      <p class="skills">Skills: HTML5 · CSS3</p>
       <a href="https://github.com/fathimabv/Cafe-World-Modern-Cafe-website" class="btn-link">GitHub</a>
       <a href="https://cafe-world-modern-cafe-website.netlify.app/" class="btn-link">Live Demo</a>
     </div>
 
     <div class="project-card" data-aos="fade-up">
-      <h5>ITech-Innovations Website</h5>
-      <p>Multi-page site for IT startups with responsive layout and clean navigation (HTML & CSS).</p>
+      <h5>ITech Innovations Website</h5>
+      <small>Jun 2025 · FITA Academy</small>
+      <p>A responsive multi-page front-end website designed for IT startups. Features organized structure and clean layout across sections like Home, Services, and Contact.</p>
+      <p class="skills">Skills: HTML5 · CSS3</p>
       <a href="https://github.com/fathimabv/ITech-Innovations-Website" class="btn-link">GitHub</a>
       <a href="https://itech-innovations-website.netlify.app/" class="btn-link">Live Demo</a>
     </div>
 
     <div class="project-card" data-aos="fade-up">
       <h5>SilentHands – Individual Version</h5>
-      <p>Front-end layout built solo with HTML5, CSS3, minimal Bootstrap, and AOS animations.</p>
+      <small>Jun 2025 · FITA Academy</small>
+      <p>Developed a responsive front-end layout individually using HTML, CSS, and AOS. The site emphasizes clean navigation and showcases UI/UX proficiency.</p>
+      <p class="skills">Skills: HTML5 · CSS3 · Bootstrap · AOS</p>
       <a href="https://github.com/fathimabv/SilentHands-individual" class="btn-link">GitHub</a>
       <a href="https://silenthands-individual.netlify.app/" class="btn-link">Live Demo</a>
     </div>
 
     <div class="project-card" data-aos="fade-up">
       <h5>SilentHands – Team Version</h5>
-      <p>Web platform for differently-abled creators. Built using HTML, CSS, Bootstrap. Inclusive UI.</p>
+      <small>Jun 2025 · FITA Academy</small>
+      <p>A web platform to support differently-abled creators. Prioritizes inclusivity with features for remote work, shop interface, and handcrafted product listings.</p>
+      <p class="skills">Skills: HTML5 · CSS3 · Bootstrap</p>
       <a href="https://github.com/fathimabv/SilentHands-Team" class="btn-link">GitHub</a>
       <a href="http://silenthands.netlify.app/" class="btn-link">Live Demo</a>
+    </div>
+
+    <div class="project-card" data-aos="fade-up">
+      <h5>Real-Time Indian Sign Language Recognition</h5>
+      <small>Jan 2025 - May 2025 · BSA Crescent Institute</small>
+      <p>Developed a real-time ISL recognition system using CNNs and OpenCV. This AI-powered project enables gesture-to-text translation to aid communication for the hearing impaired.</p>
+      <p class="skills">Skills: Deep Learning · Python · OpenCV · TensorFlow/Keras · Real-Time Systems</p>
+    </div>
+
+    <div class="project-card" data-aos="fade-up">
+      <h5>Job Salary Prediction using NLP</h5>
+      <small>Sep 2024 · BSA Crescent Institute</small>
+      <p>Machine Learning model that estimates job salaries from job descriptions using NLP. Utilized TF-IDF, word embeddings, and regression models to extract insights.</p>
+      <p class="skills">Skills: NLP · Python · Data Preprocessing</p>
+    </div>
+
+    <div class="project-card" data-aos="fade-up">
+      <h5>Karka Kasadara – Enriching Tamil Vocabulary</h5>
+      <small>Aug 2023 - May 2024 · Rotaract</small>
+      <p>As Chairperson, led a Tamil linguistic project showcasing rare words and their meanings using voice-over videos and creative social media formats. Promoted cultural literacy and youth engagement.</p>
+      <p class="skills">Skills: Leadership · Content Development · Tamil Linguistics · Social Media Strategy</p>
     </div>
   </div>
 
   <!-- Footer -->
   <footer>
-    &copy; 2025 Fathima Beevi. Projects Page | Built with 🤍
+    &copy; 2025 Fathima Beevi · Project Portfolio · Built with 🤍 and Code
   </footer>
 
   <!-- Scripts -->

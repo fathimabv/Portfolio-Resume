@@ -7,17 +7,18 @@
   <link rel="icon" href="./imgfoto.jpg">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: #fbe7f0;
-      color: #333;
+      background-color: #F6F5F2;
+      color: #000000;
     }
 
     .navbar {
-      background-color: #781c42;
+      background-color: #2D6F7D;
       padding: 25px 30px;
       min-height: 90px;
     }
@@ -34,11 +35,23 @@
       font-weight: 500;
       margin: 0 15px;
       font-size: 17px;
-      border-radius: 6px;
+      position: relative;
+      transition: all 0.3s ease;
     }
 
-    .nav-link:hover {
-      background: rgba(255, 255, 255, 0.15);
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #fff;
+      transition: 0.3s;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
     }
 
     .container {
@@ -49,38 +62,49 @@
 
     .section-title {
       font-size: 32px;
-      color: #5e1131;
+      color: #2D6F7D;
       font-family: 'Playfair Display', serif;
       text-align: center;
       margin-bottom: 40px;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: "";
+      width: 80px;
+      height: 4px;
+      background: #9C5A6C;
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 3px;
     }
 
     .skill-card {
       background: #fff;
-      border-radius: 12px;
-      padding: 25px;
-      margin-bottom: 30px;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+      border-radius: 14px;
+      padding: 30px;
+      margin-bottom: 35px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
       border: 1px solid #eee;
-      transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.3s ease;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
     }
 
     .skill-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 12px 30px rgba(120, 28, 66, 0.25);
-      border-color: #df6099;
-      background-color: #fff6fa;
+      transform: translateY(-6px) scale(1.015);
+      box-shadow: 0 18px 30px rgba(45, 111, 125, 0.3);
+      border-color: #9C5A6C;
+      background-color: #fdfbfa;
     }
 
     .skill-card h5 {
-      color: #912f56;
+      color: #9C5A6C;
       font-weight: 600;
       margin-bottom: 15px;
-      transition: color 0.3s ease;
-    }
-
-    .skill-card h5:hover {
-      color: #781c42;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     .skill-list {
@@ -90,17 +114,28 @@
 
     .skill-list li {
       font-size: 16px;
-      margin-bottom: 8px;
-      transition: transform 0.3s ease;
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 22px;
+      transition: all 0.3s ease;
+    }
+
+    .skill-list li::before {
+      content: "\f058";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      color: #2D6F7D;
     }
 
     .skill-list li:hover {
-      transform: scale(1.02);
-      color: #912f56;
+      color: #9C5A6C;
+      transform: translateX(5px);
     }
 
     footer {
-      background-color: #781c42;
+      background-color: #2D6F7D;
       color: white;
       text-align: center;
       padding: 20px;
@@ -130,58 +165,61 @@
 
 <!-- Skills Section -->
 <div class="container">
-  <h2 class="section-title" data-aos="fade-up">Skills</h2>
+  <h2 class="section-title" data-aos="fade-down">Skills & Recognition</h2>
 
-  <div class="skill-card" data-aos="zoom-in-up">
-    <h5>Technical Skills</h5>
+  <div class="skill-card" data-aos="fade-right" data-aos-delay="100">
+    <h5><i class="fas fa-code"></i> Industry Knowledge & Tools</h5>
     <ul class="skill-list">
-      <li>HTML5, CSS3, Bootstrap, JavaScript, jQuery</li>
-      <li>Python, MySQL (Basic)</li>
-      <li>Visual Studio Code, IntelliJ IDEA</li>
-      <li>JavaScript AOS Animation</li>
+      <li>Python, JavaScript, jQuery, HTML5, CSS3, Bootstrap</li>
+      <li>Visual Studio Code, IntelliJ IDEA, GitHub, Netlify</li>
+      <li>Natural Language Processing (NLP), Machine Learning, Deep Learning</li>
+      <li>OpenCV, TensorFlow/Keras, pandas, NumPy</li>
+      <li>Real-Time Systems, Computer Vision, API Integration</li>
     </ul>
   </div>
 
-  <div class="skill-card" data-aos="zoom-in-up">
-    <h5>Soft Skills</h5>
+  <div class="skill-card" data-aos="fade-left" data-aos-delay="200">
+    <h5><i class="fas fa-users-cog"></i> Project Leadership & Interpersonal Skills</h5>
     <ul class="skill-list">
-      <li>Communication, Public Speaking</li>
-      <li>Leadership, Team Management</li>
-      <li>Event Planning, Professional Development</li>
-      <li>Strategic Thinking, Time Management</li>
-      <li>Networking, Volunteer Management</li>
-      <li>Adaptability, Creativity, Problem Solving</li>
+      <li>Team Management, Strategic Thinking, Public Speaking</li>
+      <li>Event Planning, Time Management, Communication</li>
+      <li>Networking, Volunteer Management, Professional Development</li>
+      <li>Project Management, Knowledge Sharing, Cultural Awareness</li>
     </ul>
   </div>
 
-  <div class="skill-card" data-aos="zoom-in-up">
-    <h5>Tools & Frameworks</h5>
+  <div class="skill-card" data-aos="zoom-in-up" data-aos-delay="300">
+    <h5><i class="fas fa-laptop-code"></i> Selected Projects</h5>
     <ul class="skill-list">
-      <li>VS Code, IntelliJ IDEA</li>
-      <li>Bootstrap, AOS, GitHub, Netlify</li>
+      <li>Real-Time Indian Sign Language Recognition using Deep Learning</li>
+      <li>Music Recommendation System using Spotify & Python</li>
+      <li>Job Salary Prediction from Job Description using NLP</li>
+      <li>Karka Kasadara – Enriching Tamil Vocabulary</li>
+      <li>Cafe-World – Modern Cafe Website</li>
+      <li>SilentHands – Team and Individual Contributions</li>
     </ul>
   </div>
 
-  <div class="skill-card" data-aos="zoom-in-up">
-    <h5>Awards & Recognition</h5>
+  <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
+    <h5><i class="fas fa-award"></i> Honors & Recognition</h5>
     <ul class="skill-list">
-      <li>⭐ Star Rotaractor Award – 2023</li>
-      <li>📸 Photography Achievement – 2023</li>
-      <li>🏆 Supporting Pillar Award, RAC Club – 2024</li>
+      <li><strong>Supporting Pillar Award – 2024:</strong> For consistent support and contribution in Rotaract Club of Crescent.</li>
+      <li><strong>Star Rotaractor – 2023:</strong> Awarded for active leadership and involvement in community service initiatives.</li>
+      <li><strong>ACTANT'23 Photography Achievement:</strong> Recognized for excellence in photography by Crescent Actuarial Club.</li>
     </ul>
   </div>
 </div>
 
 <!-- Footer -->
 <footer>
-  &copy; 2025 Fathima Beevi. Skills Page | Built with 🤍
+  &copy; 2025 Fathima Beevi. Skills Page | Designed with Elegance ✨
 </footer>
 
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
-  AOS.init({ duration: 1000, once: true });
+  AOS.init({ duration: 1200, once: true });
 </script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 This is my personal portfolio and resume website, built using *HTML, **CSS, **Bootstrap, and **AOS animation* library. It showcases my professional background, projects, technical & soft skills, and contact information in a visually appealing and responsive layout.
 
 ## 🔗 Live Site
-👉 [View Live Portfolio](https://Portfolio-Resume.netlify.app/)  
+👉 [View Live Portfolio](https://fathimabeevi-portfolio.netlify.app/)  
 
 ## ✨ Features
 - Fully responsive and modern design
